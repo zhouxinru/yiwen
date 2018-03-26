@@ -2219,7 +2219,7 @@ html {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-
+    -webkit-line-clamp:2;
 }
 
 .fui-list-inner .text {

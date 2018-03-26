@@ -14,6 +14,8 @@ class PosterModel extends PluginModel
 		if (empty($posterid)) {
 			return NULL;
 		}
+                 
+                $t = 1;
 
 		$poster = pdo_fetch('select id,times from ' . tablename('ewei_shop_poster') . ' where id=:id and uniacid=:uniacid limit 1', array(':uniacid' => $_W['uniacid'], ':id' => $posterid));
 
