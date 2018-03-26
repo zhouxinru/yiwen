@@ -32,7 +32,7 @@ class Rank_EweiShopV2Page extends CommissionMobileLoginPage
 		case '0':
 			$user = pdo_fetch('SELECT id,uid,credit1,nickname,avatar,commission_total FROM ' . tablename('ewei_shop_member') . ' WHERE uniacid = :uniacid AND openid = :openid', array(':uniacid' => $_W['uniacid'], ':openid' => $_W['mopenid']));
 			$user['paiming'] = pdo_fetchcolumn('SELECT count(*) FROM ' . tablename('ewei_shop_member') . ' WHERE uniacid = :uniacid AND commission_total >= :commission_total', array(':uniacid' => $_W['uniacid'], ':commission_total' => $user['commission_total']));
-			$commission_title = '累计佣金';
+			$commission_title = '累计奖金';
 			break;
 
 		case '1':

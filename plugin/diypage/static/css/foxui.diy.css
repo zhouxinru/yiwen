@@ -748,11 +748,13 @@
 }
 
 .fui-list-media img {
-    width:2.5rem;
+    width:4rem; 
+    height:4rem;
+    border:1px solid #f7f7f7;
 }
 
 .fui-list-media img.round {
-    border-radius: .3rem;
+    border-radius: .2rem;
 }
 
 .fui-list-media .badge {

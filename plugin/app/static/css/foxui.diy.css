@@ -1,4 +1,4 @@
-/*.fui-notice {*/
+/*.f-list-media imgui-notice {*/
     /*border-top: 1px solid #e2e2e2;*/
     /*border-bottom: 1px solid #e2e2e2;*/
 /*}*/
@@ -758,11 +758,13 @@
 }
 
 .fui-list-media img {
-    width:2.5rem;
+    width:4rem; 
+    height:4rem;
 }
 
 .fui-list-media img.round {
-    border-radius: .3rem;
+    border-radius: .2rem;
+    border:1px solid #f7f7f7;
 }
 
 .fui-list-media .badge {

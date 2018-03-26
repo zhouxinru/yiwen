@@ -313,7 +313,7 @@
 									<i class="icon icon-locationfill"></i>
 								</div>
 								<div class="fui-cell-info">
-									{$store['realname']}
+									{$store['storename']}
 								</div>
 								<div class="fui-cell-remark">
 									查看
@@ -329,14 +329,16 @@
 		<div class="fui-cell-group">
 			<div class="fui-cell">
 				<div class="fui-cell-info">
-					姓名：{$carrier['carrier_realname']}
+					<!--姓名：{$carrier['carrier_realname']} -->
+					姓名：{$carrier['realname']}
 				</div>
 				<div class="fui-cell-remark noremark">
 				</div>
 			</div>
 			<div class="fui-cell">
 				<div class="fui-cell-info">
-					电话：{$carrier['carrier_mobile']}
+					<!--电话：{$carrier['carrier_mobile']} -->
+					电话：{$carrier['mobile']}
 				</div>
 				<div class="fui-cell-remark noremark">
 				</div>
@@ -370,7 +372,7 @@
 									{loop $verifyinfo $v}
 										<div  class="fui-cell lineblock">
 											<div class="fui-cell-info">
-												消费码:{$v['verifycode']}
+												消费码:&nbsp;{$v['verifycode']}
 											</div>
 
 											<div class="fui-cell-remark noremark">
