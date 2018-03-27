@@ -153,7 +153,7 @@ class Index_EweiShopV2Page extends MerchWebPage
         global $_W;
         global $_GPC;
         $m = pdo_get('ewei_shop_merch_user', array('uniacid' => $_W['uniacid'], 'id' => $_W['uniaccount']['merchid']));
-        if($m['openid']) {
+        if($m['bind_openid']) {
             show_json(1);
         } else {
             show_json(0);
