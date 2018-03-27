@@ -136,5 +136,28 @@ class Index_EweiShopV2Page extends MerchWebPage
 		}
 		include $this->template();
 	}
+
+	public function bind() {
+        global $_W;
+        global $_GPC;
+        $m = pdo_get('ewei_shop_merch_user', array('uniacid' => $_W['uniacid'], 'id' => $_W['uniaccount']['merchid']));
+        $rand = rand(100, 999);
+        $token = $_W['uniaccount']['merchid'] . '_' . $_W['uniacid'] . '_' . $rand;
+        $encryed = md5($_W['uniaccount']['merchid'] . $_W['uniacid'] . $rand);
+        $url = $_W['siteroot'] . '/app/index.php?i=' . $_W['uniacid'] . '&c=entry&m=ewei_shopv2&do=mobile&r=merch.bind_scan&token=' . $token . '&code=' . $encryed;
+        $qrcode = m('qrcode')->createQrcode($url);
+	    include $this->template();
+    }
+
+    public function bind_verify() {
+        global $_W;
+        global $_GPC;
+        $m = pdo_get('ewei_shop_merch_user', array('uniacid' => $_W['uniacid'], 'id' => $_W['uniaccount']['merchid']));
+        if($m['openid']) {
+            show_json(1);
+        } else {
+            show_json(0);
+        }
+    }
 }
 ?>

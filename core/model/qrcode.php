@@ -53,24 +53,44 @@ class Qrcode_EweiShopV2Model
 		}
 		return $_W['siteroot'] . 'addons/ewei_shopv2/data/qrcode/' . $_W['uniacid'] . '/' . $file;
 	}
-	public function createQrcode($url) 
+	public function createQrcode($url)
 	{
 		global $_W;
 		global $_GPC;
 		$path = IA_ROOT . '/addons/ewei_shopv2/data/qrcode/' . $_W['uniacid'] . '/';
-		if (!(is_dir($path))) 
+		if (!(is_dir($path)))
 		{
 			load()->func('file');
 			mkdirs($path);
 		}
 		$file = md5(base64_encode($url)) . '.jpg';
 		$qrcode_file = $path . $file;
-		if (!(is_file($qrcode_file))) 
+		if (!(is_file($qrcode_file)))
 		{
 			require_once IA_ROOT . '/framework/library/qrcode/phpqrcode.php';
 			QRcode::png($url, $qrcode_file, QR_ECLEVEL_L, 4);
 		}
 		return $_W['siteroot'] . 'addons/ewei_shopv2/data/qrcode/' . $_W['uniacid'] . '/' . $file;
 	}
+
+    public function createShopPayQrcode($url)
+    {
+        global $_W;
+        global $_GPC;
+        $path = IA_ROOT . '/addons/ewei_shopv2/data/shoppayqrcode/' . $_W['uniacid'] . '/';
+        if (!(is_dir($path)))
+        {
+            load()->func('file');
+            mkdirs($path);
+        }
+        $file = md5(base64_encode($url)) . '.jpg';
+        $qrcode_file = $path . $file;
+        if (!(is_file($qrcode_file)))
+        {
+            require_once IA_ROOT . '/framework/library/qrcode/phpqrcode.php';
+            QRcode::png($url, $qrcode_file, QR_ECLEVEL_L, 4);
+        }
+        return $_W['siteroot'] . 'addons/ewei_shopv2/data/shoppayqrcode/' . $_W['uniacid'] . '/' . $file;
+    }
 }
 ?>

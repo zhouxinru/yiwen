@@ -1,0 +1,54 @@
+{template '_header'}
+<div class="page-header">当前位置：<span class="text-primary">账号绑定</span></div>
+<div class="page-content">
+    <form action="" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" >
+        {if $m['bind_openid']}
+        <div class="form-group">
+            <label class="col-lg control-label">用户绑定</label>
+            <div class="col-sm-9 col-xs-12">
+                {if $m['bind_nickname']}
+                  {$m['bind_nickname']}
+                {/if}
+            </div>
+        </div>
+        {else}
+        <div class="form-group">
+            <label class="col-lg control-label">微信扫码认证</label>
+            <div class="col-sm-9 col-xs-12">
+               <img src="{$qrcode}" />
+            </div>
+        </div>
+        {/if}
+        <div class="form-group">
+            <label class="col-lg control-label"></label>
+            <div class="col-sm-9 col-xs-12">
+                {ifp 'sysset.close.edit'}
+                <input type="submit" value="提交" class="btn btn-primary"  />
+                {/if}
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    var timer = null;
+    function verfiyRequest() {
+      $.ajax({
+        url: 'merchant.php?c=site&a=entry&m=ewei_shopv2&do=web&r=sysset.bind_verify',
+        dataType: 'json',
+        success: function (data) {
+          if(data.status) {
+             timer && timer.clearInterval();
+             window.location.reload(true);
+          }
+        }
+      });
+    }
+
+    jQuery(function() {
+      timer = setInterval(verfiyRequest, 1000)
+    });
+</script>
+
+
+{template '_footer'}     
