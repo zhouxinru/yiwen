@@ -1,0 +1,19 @@
+{template '_header'}
+
+<div class="fui-list alert-header" style="-webkit-border-radius: 0.3rem;border-radius: 0.3rem;padding:0;">
+  <img src="{php echo tomedia($qrcode)}" width="100%" height="100%" class="alert-goods-img" alt="">
+</div>
+
+<div>
+  uid => {$_W['uid']}
+  username => {$_W['username']}
+  role => {$_W['role']}
+</div>
+
+<style type="text/css">
+  .share-text1{text-align: center;padding:0.5rem 0.5rem 0;font-size:0.6rem;color:#666;line-height: 1rem;}
+  .share-text2{text-align: center;padding:0 0.5rem 0.5rem;font-size:0.6rem;color:#666;line-height: 1rem;}
+</style>
+
+{php $this->footerMenus()}
+{template '_footer'}

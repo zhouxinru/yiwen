@@ -266,6 +266,7 @@ a {
 	top: 0;
 	width: 100%;
 	height: 100%;
+	overflow:hidden;
 	background: #f3f3f3;
 	box-sizing: border-box;
 	display: none;
@@ -287,7 +288,8 @@ a {
 }
 .fui-page.fui-page-current,
 .fui-page-group.fui-page-current {
-	overflow: hidden;
+	//overflow: hidden;
+	//height:auto !important;
 }
 .fui-page-group {
 	display: block;
@@ -2765,7 +2767,7 @@ position: relative;
 	overflow : hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
-	-webkit-line-clamp: 1;
+	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 }
 
@@ -2813,6 +2815,7 @@ position: relative;
 	overflow: hidden;
 	height:1rem;
 	line-height:1rem;
+	font-weight:bold;
 }
 
 .fui-list-inner .row {
