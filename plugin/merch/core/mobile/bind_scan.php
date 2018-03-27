@@ -8,7 +8,7 @@ class Bind_scan_EweiShopV2Page extends PluginMobilePage
         $token = $_GPC['token'];
         list($merchid, $uniacid, $rand) = explode('_', $token);
 
-        if(md5($_W['uniaccount']['merchid'].$_W['uniacid'].$rand) == $token) {
+        if(md5($merchid.$uniacid.$rand) == $token) {
            pdo_update('ewei_shop_merch_user', array('bind_openid' => $_W['openid'], 'bind_nickname' => $_W['fans']['nickname']), array('uniacid' => $uniacid, 'merchid' => $merchid));
            $msg = "绑定成功";
         } else {
