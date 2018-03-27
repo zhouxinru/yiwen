@@ -137,6 +137,7 @@ class Index_EweiShopV2Page extends MerchWebPage
 		include $this->template();
 	}
 
+	/*
 	public function bind() {
         global $_W;
         global $_GPC;
@@ -159,5 +160,6 @@ class Index_EweiShopV2Page extends MerchWebPage
             show_json(0);
         }
     }
+	*/
 }
 ?>

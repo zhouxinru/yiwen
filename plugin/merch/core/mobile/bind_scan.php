@@ -1,6 +1,7 @@
 <?php
 class Bind_scan_EweiShopV2Page extends PluginMobilePage
 {
+    /*
     public function main()
     {
         global $_W;
@@ -16,5 +17,6 @@ class Bind_scan_EweiShopV2Page extends PluginMobilePage
         }
         include $this->template();
     }
+    */
 }
 ?>
